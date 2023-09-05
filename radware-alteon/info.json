@@ -1,0 +1,246 @@
+{
+    "name": "radwareAlteon",
+    "version": "1.0.8",
+    "label": "Radware Alteon",
+    "description": "",
+    "publisher": "Danny",
+    "icon_small_name": "RDWR logo small.png",
+    "icon_large_name": "RDWR logo large.png",
+    "category": "",
+    "configuration": {
+        "fields": [
+            {
+                "title": "URL",
+                "type": "text",
+                "name": "uRL",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "https://192.168.1.1",
+                "tooltip": "the api url for the Radware Alteon"
+            },
+            {
+                "title": "b64EncodedAuth",
+                "type": "password",
+                "name": "b64EncodedAuth",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": null
+            },
+            {
+                "title": "Username",
+                "type": "text",
+                "name": "username",
+                "required": false,
+                "visible": false,
+                "editable": true
+            },
+            {
+                "title": "Password",
+                "type": "password",
+                "name": "password",
+                "required": false,
+                "visible": false,
+                "editable": true
+            },
+            {
+                "title": "UserPassEncoding",
+                "type": "text",
+                "name": "userPassEncoding",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "utf-8"
+            },
+            {
+                "title": "Verify SSL",
+                "type": "checkbox",
+                "name": "verify_ssl",
+                "required": false,
+                "visible": true,
+                "editable": true
+            }
+        ]
+    },
+    "operations": [
+        {
+            "operation": "view_table",
+            "title": "View Table",
+            "description": "ipAclNewCfgTable.html: View Table",
+            "enabled": true,
+            "category": "utilities",
+            "annotation": "",
+            "output_schema": {
+                "result": "",
+                "api_data": ""
+            },
+            "parameters": [],
+            "open": false
+        },
+        {
+            "operation": "view_table_element",
+            "title": "View Table Element",
+            "description": "ipAclNewCfgTable.html: View Table Element",
+            "category": "utilities",
+            "annotation": "",
+            "output_schema": {
+                "result": "",
+                "api_data": ""
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "indx",
+                    "type": "integer",
+                    "name": "indx",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "The index of the IP ACL table. Note: This table is not supported in VX instance of Virtualization."
+                }
+            ],
+            "open": false
+        },
+        {
+            "operation": "edit_table_element",
+            "title": "Edit Table Element",
+            "description": "ipAclNewCfgTable.html: Edit Table Element",
+            "category": "utilities",
+            "annotation": "",
+            "output_schema": {
+                "result": "",
+                "api_data": ""
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ip",
+                    "type": "text",
+                    "name": "ip",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "The IP address of the entry.\nexample)  1.1.1.1"
+                },
+                {
+                    "title": "Mask",
+                    "type": "text",
+                    "name": "mask",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "The IP address Mask of the entry."
+                },
+                {
+                    "title": "Indx",
+                    "type": "integer",
+                    "name": "indx",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null
+                }
+            ],
+            "open": false
+        },
+        {
+            "operation": "add_table_element",
+            "title": "Add Table Element",
+            "description": "ipAclNewCfgTable.html: Add Table Element",
+            "category": "utilities",
+            "annotation": "",
+            "output_schema": {
+                "result": "",
+                "api_data": ""
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ip",
+                    "type": "text",
+                    "name": "ip",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "The IP address of the entry."
+                },
+                {
+                    "title": "Mask",
+                    "type": "text",
+                    "name": "mask",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "The IP address Mask of the entry."
+                },
+                {
+                    "title": "Indx",
+                    "type": "integer",
+                    "name": "indx",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Add 0 to add automatic values"
+                }
+            ],
+            "open": false
+        },
+        {
+            "operation": "delete_table_element",
+            "title": "Delete Table Element",
+            "description": "ipAclNewCfgTable.html: Delete Table Element",
+            "parameters": [
+                {
+                    "title": "indx",
+                    "type": "integer",
+                    "name": "indx",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "The index of the IP ACL table. Note: This table is not supported in VX instance of Virtualization."
+                }
+            ],
+            "open": false,
+            "category": "utilities"
+        }
+    ],
+    "forked_from": false,
+    "id": 38,
+    "active": true,
+    "cs_compatible": true,
+    "system": false,
+    "playbook_collections": [],
+    "icon_small": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABYVJREFUWEe1l3tMU1ccx7+3L/qgLWDRKsImLosisIg6cDPxNZ2POTXLhE2mJG6aufnYQDaHL7BIEXxkzCUTpyyi01SYbkGm4jI1W/AVqolkZgvUAbaF8ui7pS13Ode15PqgTYrnv3PP7/5+n3t+v9/3nEvRNE1jGEZ19Um0tOrA4/GQkjwJS5YsDskrNRwAW/K3gsvlQiAQgHyPw+FAQkI8Nm38NChE2ACNjTdw6rQGcrmMFcxgMKJs7x7IZOznjxOFDaA5U4Pbt5sQERHB8m02m7F27YdImjhhyF0IG6CpSYuqH44jKiqKFUivN+DgwXKIRaLnC0C8FxYVw2azQSgUMjVgsVoxdUoaVn2w8vnXgD8CqYN795rB5/MxfXo65r0xN2hwYhB2CkKKMoRRAKCurh6dXV14ISEec+bMfuKVq1evoaWlFYpYBRYtXAAOh8OyMd69hQdXLoIjEODlt1ZAFpcQEhvldrvpTZvzIJVGMr3c39/PiEmpujjgoKBgBxxOF5Njn88Lh8OJPcWFgRZrrNiD1oZfIIqJBWga9i4DpucVIXH2wqAQVOWRozT5MpI7/3A6nUhNTUH2yvdwpqYW16/fhFgsDqx7PV7IomT4Yksuev65jwu5OZCOHgvAL6oULA/b8P7PjcEBtu8oZN6iKCpgPDAwwMyLCndAVVwKl8vJ7I5/kEq32+3YV14KbdUh6H6vB0/IbjeHqROzdh3EyOTJQ7ehqlhNu1wuVk59Ph9EYjEKtuajrGw/+swW8HhsACK35WVqNNcex1+11RBEshXPqu/AoooTkCeMGxqg7vyv9KVLDSzJ7O7pQVbmu5jx+mto0mpRWXkMsbGKgCOr1Yr0aVORmbUCXrcTmsy5iBypBMV5BOnr72eSsezoueApIIdR5ZFj0GrvBNIwe85MvLN8WeDluvP1qK+/wMzJ2ZmaMgnr1n0UWDf93YwruzbD63CABg1xrBILDlRBIJGGBkCsiJKZzRaMGDECQiFb18k66Y6uLhOkMilk0qc7tnR0gMPlIVI5Kmhgv8GwCpHP3QpQPHAF8U8FIKl1u1wYM2ZMYH1YAFxmLUy3s0B7LUzuuaJ4KDMugsuXBwKpS8vR1tYO0mwcDhc5q7ORljY5fCke8DnQfnk8eKKxoKhHRUgPuEDTFOJmNjHzsrIDMHV3B1JL2liv1zNiF/YOmFsqYHtwCBw++zj2OFoRN+MP9HNeRF5eLhSKwS7y11RG+qvhA/TeL4JDrwGHJ2Hl3evSQzlNgz7PBOxWFSL6sfuCx+Nh1DbsHXCb78J4fR744kQAA/9DUPDYW5DwZicz/zw3HxKJhCV2vb29WLMmJ3wAEqD7Xj7sHVXgRigZofC62qF45Sgko5czADqdDiXqckRFyRkIImTjEhOR+9nG4QEgQdx9t+AwnAPFEUISvwp8EbsVidw3NPwGm92OpIkTkZqazMCFnYKQFecZhiEB9PWZUX3iJB4+1CMmJgbLl76N8S+RnA+OytqfcKu5GXweD/My0rF01qyQ2IICkHxtyf8KMTHRzJFMjuqenl5s2PAxs5VkfFKihtlmg0goZGqg12rFzClTsCErMyhEUIDvDh+BTvcvBILBCwuBIIqnKtqJP+/cwf4TJ6GQD6oeidpuMOB0aSkk4jCv5SpVCVxu9xMXEnJ47d+3F9+fPYtrTVoIBQLW1/ZYLPgyJwdp4f6YVHzzLchvFrkn+gfZASIk6hIVLt+4icM1NYh+7BeszWhEdbEK0c84Of2+gqbAaOxEwbadUCpHMT1MdNxkMmH1qmxkZKQzfrK3bQePy0UEn8+s25xOjB8bh93r14dfA8QDgdBoaphru1wux/z5c5GS/KiP/ePrH0/hvk7HdMHUpCRkL14UNDgx+A8atIAP7+y0CwAAAABJRU5ErkJggg==",
+    "icon_large": "data:image/jpeg;base64,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",
+    "help_online": null,
+    "help_file": null,
+    "vendor_version": null,
+    "status": "Completed",
+    "install_result": {
+        "output": "",
+        "message": "Success"
+    },
+    "config_count": 0,
+    "ingestion_supported": false,
+    "cs_approved": false,
+    "tags": [],
+    "remote_status": {
+        "output": "",
+        "status": "finished",
+        "message": "Success"
+    },
+    "rpm_full_name": null,
+    "installed": true,
+    "created": "2023-08-23T10:12:15.274418Z",
+    "modified": "2023-08-23T10:12:15.274458Z",
+    "requirements_installed": "Completed",
+    "agent": "436c71403c6aeb36eec377c543b1a99c",
+    "rpm_installed": null
+}
