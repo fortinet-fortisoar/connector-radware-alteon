@@ -2,7 +2,7 @@
     "name": "radwareAlteon",
     "version": "1.0.8",
     "label": "Radware Alteon",
-    "description": "",
+    "description": "Radware Alteon Connector, product: https://www.radware.com/products/alteon/",
     "publisher": "Danny",
     "icon_small_name": "RDWR logo small.png",
     "icon_large_name": "RDWR logo large.png",
