@@ -6,7 +6,7 @@
     "publisher": "Danny",
     "icon_small_name": "RDWR logo small.png",
     "icon_large_name": "RDWR logo large.png",
-    "category": "",
+    "category": "Application Delivery Controller",
     "configuration": {
         "fields": [
             {
