@@ -3,7 +3,7 @@
     "version": "1.0.8",
     "label": "Radware Alteon",
     "description": "Radware Alteon Connector, product: https://www.radware.com/products/alteon/",
-    "publisher": "Danny",
+    "publisher": "Fortinet CSE",
     "icon_small_name": "RDWR logo small.png",
     "icon_large_name": "RDWR logo large.png",
     "category": "Application Delivery Controller",
