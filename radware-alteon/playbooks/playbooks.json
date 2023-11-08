@@ -1,0 +1,580 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Radware Alteon - 1.0.0",
+      "description": "Radware Alteon is a robust and feature-rich application delivery controller that helps organizations optimize application performance, enhance security, and ensure high availability, making it a valuable component of modern IT infrastructure",
+      "visible": true,
+      "image": null,
+      "uuid": "328cf9a9-b468-4d84-9d59-0805c9cc1836",
+      "id": 115,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "View Table",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves Access Control Lists (ACLs) for IP addresses in tabular format",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1699427181,
+          "collection": "/api/3/workflow_collections/328cf9a9-b468-4d84-9d59-0805c9cc1836",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/f3d5cb59-e7ed-4c00-8020-bf19671a612a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "502f589b-d7dc-48dd-9a93-e98b6d600560",
+                "title": "Radware Alteon: View Table",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "f3d5cb59-e7ed-4c00-8020-bf19671a612a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "View Table",
+              "description": null,
+              "arguments": {
+                "name": "Radware Alteon",
+                "config": "99cc1d3b-582c-43be-9009-0a6da309ef02",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "radware-alteon",
+                "operation": "view_table",
+                "operationTitle": "View Table",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "ed45ee55-186e-49c4-a45f-3b033eb3b358"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> View Table",
+              "targetStep": "/api/3/workflow_steps/ed45ee55-186e-49c4-a45f-3b033eb3b358",
+              "sourceStep": "/api/3/workflow_steps/f3d5cb59-e7ed-4c00-8020-bf19671a612a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "9cd19367-82c7-4ad6-965a-2dba3e05d0f3"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "32521b76-e2aa-446b-b5c2-b84cb3d73e35",
+          "id": 1558,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Radware",
+            "radware-alteon"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Edit Table Element",
+          "aliasName": null,
+          "tag": null,
+          "description": "Edit the  Access Control Lists (ACLs) for IP addresses elements of the table.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1699427416,
+          "collection": "/api/3/workflow_collections/328cf9a9-b468-4d84-9d59-0805c9cc1836",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1b84c3bb-52a4-4f62-a3b5-ca08e577b698",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Edit Table Element",
+              "description": null,
+              "arguments": {
+                "name": "Radware Alteon",
+                "config": "99cc1d3b-582c-43be-9009-0a6da309ef02",
+                "params": {
+                  "mask": "32",
+                  "index": 1,
+                  "ip_address": "1.1.1.1"
+                },
+                "version": "1.0.0",
+                "connector": "radware-alteon",
+                "operation": "edit_table_element",
+                "operationTitle": "Edit Table Element",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d56e3230-b36a-4b3a-9e68-f1451e8f15f0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "6539c922-7939-4006-8e04-fd63814171a4",
+                "title": "Radware Alteon: Edit Table Element",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "1b84c3bb-52a4-4f62-a3b5-ca08e577b698"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> View Table",
+              "targetStep": "/api/3/workflow_steps/d56e3230-b36a-4b3a-9e68-f1451e8f15f0",
+              "sourceStep": "/api/3/workflow_steps/1b84c3bb-52a4-4f62-a3b5-ca08e577b698",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "286e41d3-0cbe-4671-b53e-00514bba2a15"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3a550a4e-4797-4983-8f25-850ab3396650",
+          "id": 1561,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Radware",
+            "radware-alteon"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "View Table Element",
+          "aliasName": null,
+          "tag": null,
+          "description": "View the  Access Control Lists (ACLs) for IP addresses elements of the table.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1699427266,
+          "collection": "/api/3/workflow_collections/328cf9a9-b468-4d84-9d59-0805c9cc1836",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/7fb082c4-946e-403a-9724-3ef2ebb0d4be",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "2254735d-dd85-4a0d-9025-acf8df40da85",
+                "title": "Radware Alteon: View Table Element",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "7fb082c4-946e-403a-9724-3ef2ebb0d4be"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "View Table Element",
+              "description": null,
+              "arguments": {
+                "name": "Radware Alteon",
+                "config": "99cc1d3b-582c-43be-9009-0a6da309ef02",
+                "params": {
+                  "index": 1
+                },
+                "version": "1.0.0",
+                "connector": "radware-alteon",
+                "operation": "view_table_element",
+                "operationTitle": "View Table Element",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e45f058f-edbd-41fd-b6d2-c64933ab4f2e"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> View Table",
+              "targetStep": "/api/3/workflow_steps/e45f058f-edbd-41fd-b6d2-c64933ab4f2e",
+              "sourceStep": "/api/3/workflow_steps/7fb082c4-946e-403a-9724-3ef2ebb0d4be",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "1e0b61e8-c43c-48a4-8ed3-458bbb86c672"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "85d47cea-f2a2-4f8b-a156-82301d0e43b4",
+          "id": 1559,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Radware",
+            "radware-alteon"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Delete Table Element",
+          "aliasName": null,
+          "tag": null,
+          "description": "Delete the entry from the Access Control Lists (ACLs).",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1699427399,
+          "collection": "/api/3/workflow_collections/328cf9a9-b468-4d84-9d59-0805c9cc1836",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b2897ed0-f097-4147-b2fe-e98edff054a6",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Table Element",
+              "description": null,
+              "arguments": {
+                "name": "Radware Alteon",
+                "config": "99cc1d3b-582c-43be-9009-0a6da309ef02",
+                "params": {
+                  "index": 1
+                },
+                "version": "1.0.0",
+                "connector": "radware-alteon",
+                "operation": "delete_table_element",
+                "operationTitle": "Delete Table Element",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d8d7f880-28c8-4a89-9f24-9c66ff26586f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "4634ca0b-c152-44cd-a3d9-7b5791dfab52",
+                "title": "Radware Alteon: Delete Table Element",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "b2897ed0-f097-4147-b2fe-e98edff054a6"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> View Table",
+              "targetStep": "/api/3/workflow_steps/d8d7f880-28c8-4a89-9f24-9c66ff26586f",
+              "sourceStep": "/api/3/workflow_steps/b2897ed0-f097-4147-b2fe-e98edff054a6",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "8e6968c2-0994-4894-b4a1-9bec2f25afe0"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "9b311ff8-cdf7-43e5-9846-f7711345b91d",
+          "id": 1562,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Radware",
+            "radware-alteon"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Add Table Element",
+          "aliasName": null,
+          "tag": null,
+          "description": "Add the IP addresses entry in Access Control Lists (ACLs) in the table.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1699427441,
+          "collection": "/api/3/workflow_collections/328cf9a9-b468-4d84-9d59-0805c9cc1836",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/99b9e0df-04a7-4708-8f36-13df40797377",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add Table Element",
+              "description": null,
+              "arguments": {
+                "name": "Radware Alteon",
+                "config": "99cc1d3b-582c-43be-9009-0a6da309ef02",
+                "params": {
+                  "mask": "32",
+                  "index": 1,
+                  "ip_address": "1.1.1.1"
+                },
+                "version": "1.0.0",
+                "connector": "radware-alteon",
+                "operation": "add_table_element",
+                "operationTitle": "Add Table Element",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "01195cac-3982-44d0-84e5-01be41fddecf"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "feab5557-a72a-4c74-9fb2-b24cb250d361",
+                "title": "Radware Alteon: Add Table Element",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "99b9e0df-04a7-4708-8f36-13df40797377"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> View Table",
+              "targetStep": "/api/3/workflow_steps/01195cac-3982-44d0-84e5-01be41fddecf",
+              "sourceStep": "/api/3/workflow_steps/99b9e0df-04a7-4708-8f36-13df40797377",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "1ed4837e-be29-4b6e-a341-d9a2906ea584"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "eba15435-176b-4ee7-ab99-f047ebc91855",
+          "id": 1560,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Radware",
+            "radware-alteon"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Radware",
+    "radware-alteon"
+  ]
+}
