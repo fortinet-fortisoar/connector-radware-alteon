@@ -1,15 +1,20 @@
-from connectors.core.connector import Connector
-from connectors.core.connector import get_logger, ConnectorError
-from .builtins import *
-from .constants import LOGGER_NAME
-from .health_check import health_check
+from connectors.core.connector import get_logger, ConnectorError, Connector
 
-logger = get_logger(LOGGER_NAME)
+from .operations import supported_operations, health_check
+
+logger = get_logger('radware-alteon')
+
 
 class ConnectorWrapper(Connector):
 
     def execute(self, config, operation, params, *args, **kwargs):
-        return supported_operations.get(operation)(config, params)
+        try:
+            return supported_operations.get(operation)(config, params)
+        except Exception as Err:
+            raise ConnectorError(Err)
 
     def check_health(self, config=None, *args, **kwargs):
-        return health_check(config, *args, **kwargs)
+        try:
+            return health_check(config, *args, **kwargs)
+        except Exception as Err:
+            raise ConnectorError(Err)
