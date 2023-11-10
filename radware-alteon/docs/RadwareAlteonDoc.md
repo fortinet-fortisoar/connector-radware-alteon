@@ -11,6 +11,9 @@
 
 <p>Authored By: Fortinet CSE</p>
 
+Contributors: Danny Anonyges
+
+
 <p>Certified: No</p>
 
 <h2>Installing the connector</h2>
