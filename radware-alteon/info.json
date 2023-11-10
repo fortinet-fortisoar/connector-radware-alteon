@@ -9,7 +9,7 @@
   "icon_large_name": "large.png",
   "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-radware-alteon/blob/release/1.0.0/docs/docs/RadwareAlteonDoc.md",
   "ingestion_supported": false,
   "configuration": {
     "fields": [
